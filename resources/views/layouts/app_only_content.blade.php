@@ -25,7 +25,7 @@
     <div class="app app-only-content">
         {{-- ロゴ画像 --}}
         <div class="d-flex justify-content-center">
-            <a href="{{route('top')}}"><img src="/images/logo-1.png" /></a><!-- ロゴ画像を表示 -->
+            <a href="{{route('top')}}"><img src="/images/animous.png" /></a><!--ロゴ画像を表示 -->
         </div>
         {{-- コンテンツ部分 --}}
         <div class="d-flex justify-content-center mt-3">
