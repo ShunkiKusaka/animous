@@ -38,7 +38,7 @@
    role="button"
    style="position: fixed; bottom: 30px; right: 30px; width: 150px; height: 150px; border-radius: 75px;"
 >
-    <div style="font-size: 24px;">出品</div>
+    <div style="font-size: 24px;">募集する</div>
     <div>
         <i class="fas fa-camera" style="font-size: 30px;"></i>
     </div>
