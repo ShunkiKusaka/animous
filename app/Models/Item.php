@@ -10,4 +10,15 @@ class Item extends Model
     const STATE_SELLING = 'selling';
     // 締め切り済み
     const STATE_BOUGHT = 'bought';
+
+    public function secondaryCategory()
+    {
+        return $this->belongsTo(SecondaryCategory::class);
+        //商品とカテゴリの間の1対多のリレーションを定義
+    }
+
+    public function getIsStateSellingAttribute()
+    {
+        return $this->state === self::STATE_SELLING;
+    }
 }
