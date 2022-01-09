@@ -64,7 +64,17 @@
                     <div class="form-group mt-3">
                         <label for="category">カテゴリ</label>
                         <select name="category" class="custom-select form-control @error('category') is-invalid @enderror">
-                            {{-- 次のパートで実装します --}}
+                            @foreach ($categories as $category)
+                                <optgroup label="{{$category->name}}">
+                                    @foreach($category->secondaryCategories as $secondary)
+                                    <!-- $category->secondaryCategoriesはapp/Models/PrimaryCategory.phpで1対多のリレーションを定義してるから
+                                    簡単にこのように大カテゴリに紐づく小カテゴリの一覧が取得できる -->
+                                        <option value="{{$secondary->id}}" {{old('category') == $secondary->id ? 'selected' : ''}}>
+                                            {{$secondary->name}}
+                                        </option>
+                                    @endforeach
+                                </optgroup>
+                            @endforeach
                         </select>
                         @error('category')
                         <span class="invalid-feedback" role="alert">
