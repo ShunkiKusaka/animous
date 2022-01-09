@@ -21,7 +21,7 @@
 
                     <div class="form-group">
                         <label for="email">メールアドレス</label>
-                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="melpit@example.com">
+                        <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email" autofocus placeholder="melpit@example.com">
 
                         @error('email')
                         <span class="invalid-feedback" role="alert">
