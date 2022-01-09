@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use App\Models\PrimaryCategory;
+use Illuminate\Support\Facades\Request;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,8 +37,14 @@ class Header extends Component
             ->orderBy('sort_no')
             ->get();
 
+        $defaults = [
+            'category' => Request::input('category', ''),
+            'keyword'  => Request::input('keyword', ''),
+        ];
+
         return view('components.header')
             ->with('user', $user)//ユーザの情報を取得してbladeに渡す
-            ->with('categories', $categories);
+            ->with('categories', $categories)
+            ->with('defaults', $defaults);
     }
 }
