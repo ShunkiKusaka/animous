@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //ログイン状態
 Route::middleware('auth')->group(function () {
     Route::get('sell', 'SellController@showSellForm')->name('sell');
+    Route::post('sell', 'SellController@sellItem')->name('sell');
 });
 
 //ログイン状態
