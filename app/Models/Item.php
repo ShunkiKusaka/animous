@@ -11,6 +11,10 @@ class Item extends Model
     // 締め切り済み
     const STATE_BOUGHT = 'bought';
 
+    protected $casts = [//$catsフィールドで、カラムの値を取る際に、データ型を変換している
+        'bought_at' => 'datetime',//bought_atカラムを取り出す際にdatetime(Carbonクラス)に変換するように設定
+    ];
+
     public function secondaryCategory()
     {
         return $this->belongsTo(SecondaryCategory::class);

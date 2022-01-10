@@ -7,7 +7,7 @@
     <div class="col-6">
         <table class="table table-bordered">
             <tr>
-                <th>出品者</th>
+                <th>投稿者</th>
                 <td>
                     @if (!empty($item->seller->avatar_file_name))
                         <img src="/storage/avatars/{{$item->seller->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
@@ -22,7 +22,7 @@
                 <td>{{$item->secondaryCategory->primaryCategory->name}} / {{$item->secondaryCategory->name}}</td>
             </tr>
             <tr>
-                <th>商品の状態</th>
+                <th>動物の状態</th>
                 <td>{{$item->condition->name}}</td>
             </tr>
         </table>

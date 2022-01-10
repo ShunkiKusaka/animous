@@ -27,7 +27,7 @@
                     @if ($item->isStateSelling)
                         <a href="{{route('item.buy', [$item->id])}}" class="btn btn-secondary btn-block">里親になる</a>
                     @else
-                        <button class="btn btn-dark btn-block" disabled>売却済み</button>
+                        <button class="btn btn-dark btn-block" disabled>締め切り済み</button>
                     @endif
                 </div>
             </div>
