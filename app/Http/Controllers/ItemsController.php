@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Payjp\Charge;
 
 class ItemsController extends Controller
 {
@@ -119,6 +120,16 @@ class ItemsController extends Controller
 
             $seller->sales += $item->price;
             $seller->save();
+
+            $charge = Charge::create([//PAY.JPにカードトークンを送信し、決済を行う
+                'card'     => $token,//カードトークンを指定
+                'amount'   => $item->price,//金額を指定
+                'currency' => 'jpy'//通貨を指定
+            ]);//戻り値はChargeクラスのインスタンス
+
+            if (!$charge->captured) {//決済が正常に完了したか調べる
+                throw new \Exception('支払い確定失敗');
+            }
         } catch (\Exception $e) {
             DB::rollBack();
             throw $e;
