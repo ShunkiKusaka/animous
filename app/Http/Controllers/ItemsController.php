@@ -105,8 +105,8 @@ class ItemsController extends Controller
         DB::beginTransaction();
 
         try {
-            $seller = User::lockForUpdate()->find($sellerID);//レコードを排他ロック
-            $item   = Item::lockForUpdate()->find($itemID);//レコードを排他ロック
+            $seller = User::lockForUpdate()->find($sellerID);//レコードを排他ロック findはidを指定して単一のレコードを取得するメソッド 単一のレコードを排他ロックしつつ取得
+            $item   = Item::lockForUpdate()->find($itemID);//レコードを排他ロック findはidを指定して単一のレコードを取得するメソッド 単一のレコードを排他ロックしつつ取得
 
             if ($item->isStateBought) {
                 throw new \Exception('多重決済');
