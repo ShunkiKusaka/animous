@@ -43,7 +43,7 @@
 
             <div class="row mt-3 mb-3">
                 <div class="col-8 offset-2">
-                    <button class="btn btn-secondary btn-block">正式に里親になる</button>
+                <button class="btn btn-secondary btn-block" onclick="onSubmit(event)">正式に里親になる</button>
                 </div>
             </div>
 
@@ -65,5 +65,27 @@
     numberElement.mount('#number-form')//第一引数は配置先のDOMをCSSセレクタで指定
     expiryElement.mount('#expiry-form')//第一引数は配置先のDOMをCSSセレクタで指定
     cvcElement.mount('#cvc-form')//第一引数は配置先のDOMをCSSセレクタで指定
+
+    //正式に里親になるボタンをクリックした際に、カード情報をPAY.JPサーバに送信し、カードトークンを取得して後、フォームを送信
+    function onSubmit(event) {
+        const msgDom = document.querySelector('.card-form-alert');
+        msgDom.style.display = "none";
+
+        //PAY.JPサーバにカード情報を送信し、カードトークンを取得 第一引数にはElementインスタンスを指定 複数ある場合は、どれか１つを指定
+        //取得したカードトークンはr.idで参照
+        payjp.createToken(numberElement).then(function(r) {
+            if (r.error) {
+                msgDom.innerText = r.error.message;
+                msgDom.style.display = "block";
+                return;
+            }
+
+            document.querySelector('#card-token').value = r.id;
+            //カードトークンをinputタグに埋め込む
+            //CSSセレクタでidがcard-tokenのDOMを検索し、value属性にカードトークンを設定
+            //-------------------------------------------------------------------
+            document.querySelector('#buy-form').submit();//フォームを送信
+        })
+    }
 </script>
 @endsection
