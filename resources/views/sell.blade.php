@@ -19,13 +19,13 @@
         <div class="row">
             <div class="col-8 offset-2 bg-white">
 
-                <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">里親を募集する</div>
+                <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">商品を投稿する</div>
 
                 <form method="POST" action="{{ route('sell') }}" class="p-5" enctype="multipart/form-data">
                     @csrf
     
-                    {{-- ペット画像 --}}
-                    <div>ペット画像</div>
+                    {{-- 商品画像 --}}
+                    <div>商品画像</div>
                     <span class="item-image-form image-picker">
                         <input type="file" name="item-image" class="d-none" accept="image/png,image/jpeg,image/gif" id="item-image" />
                         <label for="item-image" class="d-inline-block" role="button">
@@ -38,9 +38,9 @@
                         </div>
                     @enderror
 
-                    {{-- ペット名 --}}
+                    {{-- 商品名 --}}
                     <div class="form-group mt-3">
-                        <label for="name">ペット名</label>
+                        <label for="name">商品名</label>
                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
                         @error('name')
                         <span class="invalid-feedback" role="alert">
@@ -49,9 +49,9 @@
                         @enderror
                     </div>
 
-                    {{-- ペットの説明 --}}
+                    {{-- 商品の説明 --}}
                     <div class="form-group mt-3">
-                        <label for="description">ペットの説明</label>
+                        <label for="description">商品の説明</label>
                         <textarea id="description" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" autofocus>{{ old('description') }}</textarea>
                         @error('description')
                         <span class="invalid-feedback" role="alert">
@@ -83,9 +83,9 @@
                         @enderror
                     </div>
 
-                    {{-- ペットの状態 --}}
+                    {{-- 商品の状態 --}}
                     <div class="form-group mt-3">
-                        <label for="condition">ペットの状態</label>
+                        <label for="condition">商品の状態</label>
                         <select name="condition" class="custom-select form-control @error('condition') is-invalid @enderror">
                             <!-- コントローラで取得した「商品の状態」の配列から選択肢を作成 -->
                             @foreach ($conditions as $condition)

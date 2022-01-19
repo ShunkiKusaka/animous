@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-10 offset-1 bg-white">
 
-                <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">受け取るために支払った投稿</div>
+                <div class="font-weight-bold text-center border-bottom pb-3 pt-3" style="font-size: 24px">購入した商品</div>
 
                 @foreach ($items as $item)
                     <div class="d-flex mt-3 border position-relative">

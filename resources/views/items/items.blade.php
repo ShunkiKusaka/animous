@@ -18,7 +18,7 @@
                         </div>
                         @if ($item->isStateBought)
                             <div class="position-absolute py-1 font-weight-bold d-flex justify-content-center align-items-end" style="left: 0; top: 0; color: white; background-color: #EA352C; transform: translate(-50%,-50%) rotate(-45deg); width: 125px; height: 125px; font-size: 20px;">
-                                <span>締め切り</span>
+                                <span>sold out</span>
                             </div>
                         @endif
                     </div>
@@ -31,6 +31,10 @@
             </div>
         @endforeach
     </div>
+
+    <div class="d-flex justify-content-center">
+        {{ $items->withQueryString()->links() }}
+    </div>
 </div>
 
 <a href="{{route('sell')}}"
@@ -38,7 +42,7 @@
    role="button"
    style="position: fixed; bottom: 30px; right: 30px; width: 150px; height: 150px; border-radius: 75px;"
 >
-    <div style="font-size: 24px;">募集する</div>
+    <div style="font-size: 24px;">出品する</div>
     <div>
         <i class="fas fa-camera" style="font-size: 30px;"></i>
     </div>

@@ -25,9 +25,9 @@
             <div class="row">
                 <div class="col-8 offset-2">
                     @if ($item->isStateSelling)
-                        <a href="{{route('item.buy', [$item->id])}}" class="btn btn-secondary btn-block">里親になる</a>
+                        <a href="{{route('item.buy', [$item->id])}}" class="btn btn-secondary btn-block">購入する</a>
                     @else
-                        <button class="btn btn-dark btn-block" disabled>締め切り済み</button>
+                        <button class="btn btn-dark btn-block" disabled>sold out</button>
                     @endif
                 </div>
             </div>
