@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{$item->name}} | 商品購入
+    {{$item->name}} | 引き取り予約
 @endsection
 
 @section('content')
@@ -43,7 +43,7 @@
 
             <div class="row mt-3 mb-3">
                 <div class="col-8 offset-2">
-                <button class="btn btn-secondary btn-block" onclick="onSubmit(event)">購入確定</button>
+                <button class="btn btn-secondary btn-block" onclick="onSubmit(event)">引き取り予約確定</button>
                 </div>
             </div>
 

@@ -13,67 +13,67 @@ class ItemConditionSeeder extends Seeder
     public function run()
     {
 
-        factory(ItemCondition::class)->create([
-            'id'      => 1,
-            'name'    => '新品、未使用',
-            'sort_no' => 1,
-        ]);
-        factory(ItemCondition::class)->create([
-            'id'      => 2,
-            'name'    => '未使用に近い',
-            'sort_no' => 2,
-        ]);
-        factory(ItemCondition::class)->create([
-            'id'      => 3,
-            'name'    => '目立った傷や汚れなし',
-            'sort_no' => 3,
-        ]);
-        factory(ItemCondition::class)->create([
-            'id'      => 4,
-            'name'    => 'やや傷や汚れあり',
-            'sort_no' => 4,
-        ]);
-        factory(ItemCondition::class)->create([
-            'id'      => 5,
-            'name'    => '傷や汚れあり',
-            'sort_no' => 5,
-        ]);
-        factory(ItemCondition::class)->create([
-            'id'      => 6,
-            'name'    => '全体的に状態が悪い',
-            'sort_no' => 6,
-        ]);
-
-
-
         // factory(ItemCondition::class)->create([
         //     'id'      => 1,
-        //     'name'    => '状態・体調良好',
+        //     'name'    => '新品、未使用',
         //     'sort_no' => 1,
         // ]);
-
         // factory(ItemCondition::class)->create([
         //     'id'      => 2,
-        //     'name'    => 'やや体調がすぐれない',
+        //     'name'    => '未使用に近い',
         //     'sort_no' => 2,
         // ]);
-
         // factory(ItemCondition::class)->create([
         //     'id'      => 3,
-        //     'name'    => '体調がすぐれない(検査なし)',
+        //     'name'    => '目立った傷や汚れなし',
         //     'sort_no' => 3,
         // ]);
-
         // factory(ItemCondition::class)->create([
         //     'id'      => 4,
-        //     'name'    => '持病持ちで、病院に通っている',
+        //     'name'    => 'やや傷や汚れあり',
         //     'sort_no' => 4,
         // ]);
-
         // factory(ItemCondition::class)->create([
         //     'id'      => 5,
-        //     'name'    => '持病持ち(病院通いなし)',
+        //     'name'    => '傷や汚れあり',
         //     'sort_no' => 5,
         // ]);
+        // factory(ItemCondition::class)->create([
+        //     'id'      => 6,
+        //     'name'    => '全体的に状態が悪い',
+        //     'sort_no' => 6,
+        // ]);
+
+
+
+        factory(ItemCondition::class)->create([
+            'id'      => 1,
+            'name'    => '状態・体調良好',
+            'sort_no' => 1,
+        ]);
+
+        factory(ItemCondition::class)->create([
+            'id'      => 2,
+            'name'    => 'やや体調がすぐれない',
+            'sort_no' => 2,
+        ]);
+
+        factory(ItemCondition::class)->create([
+            'id'      => 3,
+            'name'    => '体調がすぐれない(検査なし)',
+            'sort_no' => 3,
+        ]);
+
+        factory(ItemCondition::class)->create([
+            'id'      => 4,
+            'name'    => '持病持ちで、病院に通っている',
+            'sort_no' => 4,
+        ]);
+
+        factory(ItemCondition::class)->create([
+            'id'      => 5,
+            'name'    => '持病持ち(病院通いなし)',
+            'sort_no' => 5,
+        ]);
     }
 }

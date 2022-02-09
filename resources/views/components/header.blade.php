@@ -66,22 +66,22 @@
                             
                             <div class="dropdown-item-text">
                                 <div class="row no-gutters">
-                                    <div class="col">出品数</div>
+                                    <div class="col">投稿数</div>
                                     <div class="col-auto">{{number_format($user->soldItems->count())}} 個</div>
                                 </div>
                             </div>
                             <div class="dropdown-divider"></div>
 
                             <a class="dropdown-item" href="{{ route('sell') }}">
-                                <i class="fas fa-camera text-left" style="width: 30px"></i>商品を出品する
+                                <i class="fas fa-camera text-left" style="width: 30px"></i>里親を募集する
                             </a>
 
                             <a class="dropdown-item" href="{{ route('mypage.sold-items') }}">
-                                <i class="fas fa-store-alt text-left" style="width: 30px"></i>出品した商品
+                                <i class="fas fa-store-alt text-left" style="width: 30px"></i>募集した投稿
                             </a>
 
                             <a class="dropdown-item" href="{{ route('mypage.bought-items') }}">
-                                <i class="fas fa-shopping-bag text-left" style="width: 30px"></i>購入した商品
+                                <i class="fas fa-shopping-bag text-left" style="width: 30px"></i>引き取ったペット
                             </a>
 
                             <a class="dropdown-item" href="{{ route('mypage.edit-profile') }}">

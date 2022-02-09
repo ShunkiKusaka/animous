@@ -44,7 +44,7 @@ class ItemsController extends Controller
 
         $items = $query->orderByRaw( "FIELD(state, '" . Item::STATE_SELLING . "', '" . Item::STATE_BOUGHT . "')" )//出品中の商品を先に、購入済みの商品を後に表示
             ->orderBy('id', 'DESC')//さらにidの降順（最近出品された順）で並べ替え
-            ->paginate(5);
+            ->paginate(12);
 
         return view('items.items')
             ->with('items', $items);
@@ -92,11 +92,11 @@ class ItemsController extends Controller
             Log::error($e);
             return redirect()->back()
                 ->with('type', 'danger')
-                ->with('message', '購入処理が失敗しました。');
+                ->with('message', '決済処理が失敗しました。');
         }
 
         return redirect()->route('item', [$item->id])
-            ->with('message', '商品を購入しました。');
+            ->with('message', '引き取り予約が完了しました。');
     }
 
     //決済メソッド
